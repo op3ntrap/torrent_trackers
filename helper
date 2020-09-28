@@ -12,6 +12,3 @@ python newtrackon.py > TrackerDB_new
 echo $(diff TrackerDB TrackerDB_new)
 mv TrackerDB $file_name.$current_time
 mv TrackerDB_new TrackerDB
-
-
-
