@@ -116,12 +116,7 @@ class SubmoduleTrackerLists:
 if __name__ == "__main__":
     am = SubmoduleTrackerLists()
     pm = NewTrackon()
-    # Finally fffffff
-
-    for val in am.best_trackers:
-        print(val)
-    for val in pm.master_dump:
-        print(val)
-    print("\n\n# Other Trackers\n\n")
-    for val in am.other_trackers:
-        print(val)
+    with open('TrackerDB', 'a') as data_writer:
+        data_writer.writelines(am.best_trackers)
+        data_writer.writelines(pm.master_dump)
+        data_writer.writelines(am.other_trackers)

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo $(git submodule update trackerslist)
+
+# Define a timestamp function
+timestamp() {
+  date +"%T" # current time
+}
+file_name=TrackerDB
+current_time=$(date "+%Y.%m.%d-%H.%M.%S")
+python newtrackon.py > TrackerDB_new
+echo $(diff TrackerDB TrackerDB_new)
+mv TrackerDB $file_name.$current_time
+mv TrackerDB_new TrackerDB
